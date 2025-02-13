@@ -1,0 +1,453 @@
+\documentclass{article}
+
+\usepackage{graphicx} % package to manage images
+\usepackage{amsmath} 
+\usepackage{ragged2e} % For text align
+\usepackage{geometry} % Page & margin size
+\graphicspath{ {./images/} } % For inserting images
+\usepackage{soul} % Crossed text
+\usepackage{sectsty} % For section font
+\usepackage{relsize} % Font resizing
+\usepackage{blindtext} % Random text
+\usepackage{indentfirst} % Indents the first paragraph after the heading
+\usepackage{wrapfig} % Text aroun image
+\usepackage[font=Large]{caption} % Edit capture font size
+\usepackage{subcaption} % For separate captions on 2 images
+\usepackage{sidecap} % For side captions
+\usepackage{hyperref} % For hyperlinks
+\usepackage{array} % Sets width of the table's column
+\usepackage{tabularx} % Even columns size
+\usepackage{multirow} % Merge rows
+\usepackage{multicol} % Text multicolumns
+\usepackage[main=english,russian,french]{babel} % Multi languages
+
+% Setting papersize and margins
+\geometry{
+a4paper,
+left=20mm,
+right=20mm,
+top=20mm,
+bottom=20mm
+}
+
+% Setting font sizes for headings
+\sectionfont{\fontsize{16}{18}\selectfont}
+\subsectionfont{\fontsize{14}{18}\selectfont}
+\subsubsectionfont{\fontsize{14}{18}\selectfont}
+\paragraphfont{\fontsize{14}{18}\selectfont}
+\subparagraphfont{\fontsize{14}{18}\selectfont}
+
+
+\begin{document}
+
+\fontsize{14}{18}\selectfont % Font size for the whole doc
+
+\begin{titlepage} % Title page
+
+    \begin{figure} % Uni/Company logo
+        \centering
+        \includegraphics[scale=0.15]{logo.png}
+    \end{figure}
+   
+    \begin{center} % Title and affilation 
+
+        \vspace*{1cm}
+        \fontsize{14}{20}\selectfont
+        University Name\\
+        Department Name\\
+        Program: Program Name
+        
+        \vspace*{3cm}
+
+        \fontsize{16}{24}\selectfont
+        Discipline name\\
+        Report\\
+        \textbf{Report Title}
+                
+    \end{center}
+
+    
+    \begin{RaggedLeft} % Author's and tutor's info
+        \vspace*{3cm}
+
+        \fontsize{14}{20}\selectfont
+        Student: First n Last Name\\
+        BSc/MSc/PhD 1st year, Group number\\
+        
+        \vspace*{0.3cm}
+        \fontsize{14}{20}\selectfont
+        Professor: Professor's Name\\
+        Professor's position\\
+                
+    \end{RaggedLeft}
+
+    \begin{center} % Place and date
+        \vfill % Fills up all the available space
+        
+        \fontsize{14}{20}\selectfont
+        City\\
+        2025
+        
+    \end{center}
+
+\end{titlepage}
+
+
+
+\newpage 
+
+\pagenumbering{arabic} % Setting page numbering
+\setcounter{page}{2}
+
+
+\setlength{\parskip}{6pt} % Creates space between paragraphs
+\setlength{\parindent}{20pt} % Creates indent
+
+
+\renewcommand*\contentsname{Table of contents} % New heading for content 
+\begin{center}
+    \fontsize{14}{16}\selectfont{\tableofcontents}
+\end{center}
+
+
+\newpage
+
+\cleardoublepage % Adding list of figures to the table of contents
+\addcontentsline{toc}{section}{\listfigurename}
+\listoffigures % Creating list of figures
+
+\cleardoublepage % Adding list of tables to the table of contents
+\addcontentsline{toc}{section}{\listtablename}
+\listoftables % Creating list of tables
+
+\newpage
+
+
+
+\section{Introduction}
+\subsection{Sub-section}
+\subsubsection{Sub-sub-section}
+\paragraph{Paragraph}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+\subparagraph{Sub-paragraph}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+
+
+\section{Text}
+\subsection*{Skips}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. \smallskip\par 
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\medskip\par
+Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. \bigskip\par 
+In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+
+%\vspace{2cm}
+
+\blindtext[1]
+
+\subsection*{Lines}
+
+\noindent\rule[0.5ex]{\linewidth}{2pt} % Hights, width, thickness
+
+
+\section{Lists}
+
+\begin{itemize}
+    \item[-] Math expressions
+    \item[-] Chemical equations
+    \item[-] Reference to the literature
+    \item[-] Reference list
+    \item[-]\st{Columns}
+    \item[-] Colors
+    \item[-]\st{Crossed text}
+    \item[-]\underline{Underline text}
+    \item[-] Upper and lower case text
+    \item[-]\st{Language}
+    \begin{description}
+        \item[Note:] That's all the components of this template 
+    \end{description}
+    \begin{itemize}
+        \item New level
+    \end{itemize}
+\end{itemize}
+
+\vspace*{1cm}
+
+\begin{enumerate}
+    \item Item 1
+    \begin{enumerate}
+        \item Item 2
+        \begin{enumerate}
+            \item Item 3
+            \begin{enumerate}
+                \item Item 4
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+
+
+
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}}
+
+\begin{enumerate}
+\item One
+\begin{enumerate}
+    \item One point one
+    \begin{enumerate}
+    \item One point one, point one
+        \begin{enumerate}
+        \item One point one, point one, point one
+        \item One point one, point one, point two
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+\end{enumerate}
+
+\section{Images}
+\subsection{Images}
+
+[t] - top, [b] - bottom, [h] - place here, [p] - separate page
+
+\begin{figure}[h] %scale image
+    \centering
+    \caption{Froggie}
+    \includegraphics[scale=0.5]{froggie.jpg}\par
+    \label{fig:1} % Needed for text reference
+\end{figure} 
+
+Reference for figures \ref{fig:1} and \ref{fig:2}.
+
+\begin{SCfigure}[20][h] % Image with side capture [capture width] + size and rotation
+    \centering
+    \includegraphics[width=7cm, height=4cm, angle=180]{froggie.jpg}\par 
+    \caption{Froggie Collapse}
+    \label{fig:2}
+\end{SCfigure} 
+
+\vfill \break
+
+\begin{figure}[h] % Image on the separate page + text wide
+    \centering
+    \includegraphics[width=\textwidth]{froggie.jpg}\par
+    \caption{Froggie Textwide}
+    \label{fig:3}
+\end{figure} 
+
+\clearpage
+
+% Two images on one figure
+
+\begin{figure}[h]
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \includegraphics[scale=0.3, angle=90]{froggie.jpg}
+        \caption{Counterclockwise Froggie}
+        \label{subfig:1}
+    \end{subfigure}
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.57\linewidth, angle=-90]{froggie.jpg}
+        \caption{Clockwise Froggie}
+        \label{subfig:2}
+    \end{subfigure}
+    \caption{Froggie duo}
+    \label{fig:4}
+\end{figure}
+
+
+
+\subsection{Text around images}
+
+\begin{wrapfigure}{r}{0.25\textwidth} %figure on the right + gap size
+    \centering
+    \caption{Froggie surrounded}
+    \includegraphics[width=0.25\textwidth]{froggie.jpg} %image size
+    %Figure 5. Froggie surrounded
+\end{wrapfigure}
+
+\blindtext[1]
+
+
+\begin{wrapfigure}{l}{0.25\textwidth} %figure on the left + gap size
+    \centering
+    \includegraphics[width=0.25\textwidth]{froggie.jpg}
+    \caption{Froggie sursquared}
+\end{wrapfigure}
+
+\blindtext[1]
+
+
+
+\section{Tables}
+\subsection*{Insert tables}
+
+
+\begin{table}[h]
+    \centering
+    \fontsize{14}{18}\selectfont % Manually added
+    \begin{tabular}{|c|c|c|} \hline  
+      \multicolumn{3}{|c|}{Columns}\\ \hline  
+    one     & two & three \\ \hline  
+    uno     & dos & tres \\ \hline 
+    \end{tabular}
+    \caption{Table made via visual editor}
+    \label{tab:1}
+\end{table}
+
+
+\subsection*{Table inserted from Wiki via Visual editor (Ctrl+C/Ctrl+V)}
+
+\begin{table}[h]
+\centering
+\caption{Guy Ritchie Films}
+\label{tab:2}
+\begin{tabular}{l l l l l }
+Year  & Title  & Director  & Writer  & Producer  \\
+
+1998  & \textit{\href{https://en.wikipedia.org/wiki/Lock,_Stock_and_Two_Smoking_Barrels}{Lock, Stock and Two Smoking Barrels}}  & Yes  & Yes  & No  \\
+2000  & \textit{\href{https://en.wikipedia.org/wiki/Snatch_(film)}{Snatch}}  & Yes  & Yes  & No  \\
+2002  & \textit{\href{https://en.wikipedia.org/wiki/Swept_Away_(2002_film)}{Swept Away}}  & Yes  & Yes  & No  \\
+2005  & \textit{\href{https://en.wikipedia.org/wiki/Revolver_(2005_film)}{Revolver}}  & Yes  & Yes  & No  \\
+2008  & \textit{\href{https://en.wikipedia.org/wiki/RocknRolla}{RocknRolla}}  & Yes  & Yes  & Yes  \\
+2009  & \textit{\href{https://en.wikipedia.org/wiki/Sherlock_Holmes_(2009_film)}{Sherlock Holmes}}  & Yes  & No  & No  \\
+2011  & \textit{\href{https://en.wikipedia.org/wiki/Sherlock_Holmes:_A_Game_of_Shadows}{Sherlock Holmes: A Game of Shadows}}  & Yes  & No  & No  \\
+2015  & \textit{\href{https://en.wikipedia.org/wiki/The_Man_from_U.N.C.L.E._(film)}{The Man from U.N.C.L.E.}}  & Yes  & Yes  & Yes  \\
+2017  & \textit{\href{https://en.wikipedia.org/wiki/King_Arthur:_Legend_of_the_Sword}{King Arthur: Legend of the Sword}}  & Yes  & Yes  & Yes  \\
+\multirow{2}{*}{2019 } & \textit{\href{https://en.wikipedia.org/wiki/Aladdin_(2019_film)}{Aladdin}}  & Yes  & Yes  & No  \\
+ & \textit{\href{https://en.wikipedia.org/wiki/The_Gentlemen_(2019_film)}{The Gentlemen}}  & Yes  & Yes  & Yes  \\
+2021  & \textit{\href{https://en.wikipedia.org/wiki/Wrath_of_Man}{Wrath of Man}}  & Yes  & Yes  & Yes  \\
+\multirow{2}{*}{2023 } & \textit{\href{https://en.wikipedia.org/wiki/Operation_Fortune:_Ruse_de_Guerre}{Operation Fortune: Ruse de Guerre}}  & Yes  & Yes  & Yes  \\
+ & \textit{\href{https://en.wikipedia.org/wiki/Guy_Ritchie\%27s_The_Covenant}{Guy Ritchie's The Covenant}}  & Yes  & Yes  & Yes  \\
+2024  & \textit{\href{https://en.wikipedia.org/wiki/The_Ministry_of_Ungentlemanly_Warfare}{The Ministry of Ungentlemanly Warfare}}  & Yes  & Yes  & Yes  \\
+2025  & \textit{\href{https://en.wikipedia.org/wiki/Fountain_of_Youth_(2025_film)}{Fountain of Youth}}  & Yes  & No  & Yes  \\
+
+\end{tabular}
+
+\end{table}
+
+
+\subsection{Manually created tables}
+
+\clearpage % Fills the empty space 
+
+\begin{table}[h]
+    \centering
+    \fontsize{14}{18}\selectfont
+    \caption{Simple table}
+    \begin{tabular}{||c|c|c||} % | creates lines
+    \hline % Horizontal line
+     Col1 & Col2 & Col3 \\ [0.5ex] 
+     \hline\hline
+     one    & two & three \\
+     \hline
+     uno    & dos & tres \\
+     \hline
+    \end{tabular}
+    \label{tab:3}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \fontsize{14}{18}\selectfont
+    \setlength{\arrayrulewidth}{0.5mm} % Boarders thickness
+    \setlength{\tabcolsep}{18pt} % Space between text and boarders
+    \renewcommand{\arraystretch}{1.5} % Height of the row
+    \caption{Columns of fixed width}
+    \begin{tabular}{| m{3cm} | m{3cm} | m{3cm} |} %middle,top,bottom aligning
+    \hline
+    Random text very random text & Less random text & Not a random text \\ 
+    \hline
+    Definitely a random text & Might be a random text & No text \\  
+    \hline
+    \end{tabular}
+    \label{tab:4}
+\end{table}
+
+Table \ref{tab:5} is an example of a referenced \LaTeX{} element.
+
+\begin{table}[h]
+    \fontsize{14}{18}\selectfont
+    \caption{Columns of fixed width}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{0.8\textwidth} { % equal columns, 80% width
+    | >{\raggedright\arraybackslash}X 
+    | >{\centering\arraybackslash}X 
+    | >{\raggedleft\arraybackslash}X | }
+    \hline
+    \multicolumn{3}{|c|}{Multicolumn}\\ % Merge columns
+    \hline
+    \multirow{2}{0.2\textwidth}{Multirow} & one & two \\ % Merge rows
+    & three & four \\
+    \hline
+    Left align & Center align & Right align \\ 
+    \hline
+    \end{tabularx}
+    \label{tab:5}
+\end{table}
+
+
+\section{Columns}
+
+\setlength{\columnsep}{0.3cm} % Set column separation
+\begin{multicols}{3} 
+    [
+    %\section{Columns} %optional
+    All columns contain same amount of text.
+    ]
+    \blindtext
+\end{multicols}
+
+
+\setlength{\columnseprule}{1pt} % Column vertical ruler
+\setlength{\columnsep}{1cm}
+\begin{multicols*}{2} 
+    [
+    %\section{Columns} %optional
+    Text in first column goes down till the end of the page, then the next column gets filled.
+    ]
+    some random text some random text some random text some random text
+    
+    even more random text
+    
+    \columnbreak %Break point
+    \blindtext
+\end{multicols*}
+
+
+
+
+\section{Languages}
+
+\begin{otherlanguage}{russian}
+    текст
+\end{otherlanguage}
+
+English text \foreignlanguage{russian}{русский текст} english text
+
+\section{Math}
+
+
+
+\section{Chemistry}
+%Lower case: H_{2}O \\
+%Upper case: H^2O
+
+
+
+
+
+\section{Colors}
+
+
+\section{Code}
+
+
+\section{Reference}
+
+
+
+
+
+\end{document}
